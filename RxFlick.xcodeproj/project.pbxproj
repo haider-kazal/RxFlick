@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F553D57224646BD200E4C4B7 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = F553D57124646BD200E4C4B7 /* Differentiator */; };
+		F553D57424646BD200E4C4B7 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = F553D57324646BD200E4C4B7 /* RxDataSources */; };
+		F553D57724646C9900E4C4B7 /* Reusable in Frameworks */ = {isa = PBXBuildFile; productRef = F553D57624646C9900E4C4B7 /* Reusable */; };
 		F563F3872463D1AC00348897 /* PaginatedResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F563F3862463D1AC00348897 /* PaginatedResults.swift */; };
 		F59FC7DC244CCCA30066AB66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59FC7DB244CCCA30066AB66 /* AppDelegate.swift */; };
 		F59FC7DE244CCCA30066AB66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59FC7DD244CCCA30066AB66 /* SceneDelegate.swift */; };
@@ -84,7 +87,10 @@
 				F59FC813244CCEDC0066AB66 /* RxSwift in Frameworks */,
 				F59FC810244CCE310066AB66 /* Kingfisher in Frameworks */,
 				F59FC819244CCEDC0066AB66 /* RxCocoa in Frameworks */,
+				F553D57724646C9900E4C4B7 /* Reusable in Frameworks */,
 				F59FC817244CCEDC0066AB66 /* RxRelay in Frameworks */,
+				F553D57424646BD200E4C4B7 /* RxDataSources in Frameworks */,
+				F553D57224646BD200E4C4B7 /* Differentiator in Frameworks */,
 				F59FC80D244CCDB00066AB66 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,6 +301,9 @@
 				F59FC812244CCEDC0066AB66 /* RxSwift */,
 				F59FC816244CCEDC0066AB66 /* RxRelay */,
 				F59FC818244CCEDC0066AB66 /* RxCocoa */,
+				F553D57124646BD200E4C4B7 /* Differentiator */,
+				F553D57324646BD200E4C4B7 /* RxDataSources */,
+				F553D57624646C9900E4C4B7 /* Reusable */,
 			);
 			productName = RxFlick;
 			productReference = F59FC7D8244CCCA30066AB66 /* RxFlick.app */;
@@ -376,6 +385,8 @@
 				F59FC80B244CCDB00066AB66 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				F59FC80E244CCE310066AB66 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				F59FC811244CCEDC0066AB66 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				F553D57024646BD200E4C4B7 /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				F553D57524646C9900E4C4B7 /* XCRemoteSwiftPackageReference "Reusable" */,
 			);
 			productRefGroup = F59FC7D9244CCCA30066AB66 /* Products */;
 			projectDirPath = "";
@@ -754,6 +765,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F553D57024646BD200E4C4B7 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
+		F553D57524646C9900E4C4B7 /* XCRemoteSwiftPackageReference "Reusable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AliSoftware/Reusable.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.1;
+			};
+		};
 		F59FC80B244CCDB00066AB66 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -781,6 +808,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F553D57124646BD200E4C4B7 /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F553D57024646BD200E4C4B7 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		F553D57324646BD200E4C4B7 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F553D57024646BD200E4C4B7 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
+		F553D57624646C9900E4C4B7 /* Reusable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F553D57524646C9900E4C4B7 /* XCRemoteSwiftPackageReference "Reusable" */;
+			productName = Reusable;
+		};
 		F59FC80C244CCDB00066AB66 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F59FC80B244CCDB00066AB66 /* XCRemoteSwiftPackageReference "Alamofire" */;

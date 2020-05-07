@@ -27,15 +27,24 @@ final class DiscoverMoviesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabBar()
-        let a = DiscoverMoviesAPIService().movies(atPage: 1).subscribe(onNext: { (result) in
-            print(result)
-        }, onError: { (error) in
-            print(error)
-        }, onCompleted: {
-            print("Completed")
-        }, onDisposed: {
-            print("Disposed")
-        })
-        a.disposed(by: disposeBag)
+        
+        view.addSubview(tableView)
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let service = DiscoverMoviesAPIService()
+        service.movies(atPage: 1)
+            .compactMap({ $0.results })
+            .bind(to: tableView.rx.items(cellIdentifier: "DefaultCell")) { (index, movie, cell) in
+                cell.textLabel?.text = movie.title
+        }.disposed(by: disposeBag)
     }
 }
